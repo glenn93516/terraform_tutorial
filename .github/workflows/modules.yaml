@@ -13,7 +13,6 @@ jobs:
       - name: Rendering terraform docs and push
         uses: terraform-docs/gh-actions@main
         with:
-          working-dir: modules/
           recursive: true
           output-method: replace
           git-push: "true"
