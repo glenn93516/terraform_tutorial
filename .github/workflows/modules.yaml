@@ -13,11 +13,12 @@ jobs:
       - name: Rendering terraform docs and push
         uses: terraform-docs/gh-actions@main
         with:
+          find-dir: modules/
           recursive: true
+          recursive-path: .
           output-method: replace
           git-push: "true"
           template: |-
-            <!-- BEGIN_TF_DOCS -->
             # Test Terraform docs
 
             ## Verify
@@ -26,4 +27,3 @@ jobs:
             Should inject the table under usage
 
             {{ .Content }}
-            <!-- END_TF_DOCS -->
