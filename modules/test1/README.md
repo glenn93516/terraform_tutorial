@@ -1,4 +1,3 @@
-<!-- BEGIN_TF_DOCS -->
 # Test Terraform docs
 
 ## Verify
@@ -42,4 +41,3 @@ No modules.
 |------|-------------|
 | <a name="output_vpc_arn"></a> [vpc\_arn](#output\_vpc\_arn) | Amazon Resource Name of test VPC |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | The ID of the VPC |
-<!-- END_TF_DOCS -->
