@@ -13,4 +13,4 @@ jobs:
       - name: Check out the codes
         uses: actions/checkout@v2
       - name: Check out the event
-        run: echo '${{ github.event.workflow_run.event}}'
+        run: echo '${{ github.event}}'
