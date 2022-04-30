@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout the codes
         uses: actions/checkout@v2
+      - name: Check status for test
+        run: echo '${{ github.event.workflow_run.conclusion}}'
+      - name: Check pr for test
+        run: echo '${{ github.event.workflow_run.event}}'
       - name: Rendering terraform docs and push
         uses: terraform-docs/gh-actions@main
         with:
