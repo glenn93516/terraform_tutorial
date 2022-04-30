@@ -1,13 +1,12 @@
 on:
   workflow_run:
-    workflows: [Test Action]
+    workflows: ["Test Action"]
     types:
       - completed
 
 jobs:
   docs:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout the codes
         uses: actions/checkout@v2
