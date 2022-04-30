@@ -1,7 +1,6 @@
 on:
   workflow_run:
-    workflows:
-      - Test Action
+    workflows: [Test Action]
     types:
       - completed
 
