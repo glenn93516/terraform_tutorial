@@ -1,0 +1,12 @@
+on:
+  pull_request:
+    paths:
+      - modules/**
+
+jobs:
+  tests:
+    name: Test Action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the codes
+        uses: actions/checkout@v2
