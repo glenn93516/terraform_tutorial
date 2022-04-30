@@ -18,5 +18,7 @@ jobs:
       - name: Check out the event
         run: |
           echo '${{ github.event.name }}'
+          echo '${{ github.event_name }}'
+          echo '${{ github.event_path }}'
           echo '${{ github.event.type }}'
           echo '${{ github.event.action }}'
