@@ -1,4 +1,9 @@
 on:
+  workflow_run:
+    workflows:
+      - Test Action
+    types:
+      - completed
   pull_request:
     paths:
       - modules/**
@@ -6,10 +11,10 @@ on:
 jobs:
   docs:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Checkout the codes
+        uses: actions/checkout@v2
       - name: Rendering terraform docs and push
         uses: terraform-docs/gh-actions@main
         with:
