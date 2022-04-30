@@ -1,7 +1,7 @@
 variable "cidr_block" {
   type        = string
   description = "The CIDR block of VPC"
-  default     = "10.0.0.0/16"
+  default     = "10.1.0.0/16"
 }
 
 variable "default_tags" {
