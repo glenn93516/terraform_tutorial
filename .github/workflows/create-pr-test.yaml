@@ -17,6 +17,7 @@ jobs:
           branch: 'test-branch-${{ github.run_id }}'
   terraform-docs:
     runs-on: ubuntu-latest
+    needs: [create_branch]
     steps:
       - name: checkout to branch
         uses: actions/checkout@v3
