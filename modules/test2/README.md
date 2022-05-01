@@ -32,7 +32,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | The CIDR block of VPC | `string` | `"10.1.0.0/16"` | no |
+| <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | The CIDR block of VPC | `string` | `"10.0.0.0/16"` | no |
 | <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | Default tags | `map(string)` | <pre>{<br>  "Created_by": "terraform"<br>}</pre> | no |
 
 ## Outputs
