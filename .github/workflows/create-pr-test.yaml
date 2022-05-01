@@ -42,6 +42,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
+          base: main
           branch: 'test-branch-${{ github.run_id }}'
           title: 'TEST AUTO PR'
           body: |
