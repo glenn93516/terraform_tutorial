@@ -39,3 +39,10 @@ jobs:
 
             Should use the template defined instead of the default
             Should inject the table under usage
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        title: 'TEST AUTO PR'
+        body: |
+          테스트용 PR
+          - test1
+          - test2
