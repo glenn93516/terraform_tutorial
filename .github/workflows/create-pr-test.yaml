@@ -10,6 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: create branch
+        uses: peterjgrainger/action-create-branch@v2.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: 'test-branch-${{ github.run_id }}'
+  terraform-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout to branch
         uses: actions/checkout@v3
         with:
           ref: 'test-branch-${{ github.run_id }}'
+      - name: Rendering terraform docs and push
+        uses: terraform-docs/gh-actions@main
+        with:
+          find-dir: modules/
+          recursive: true
+          recursive-path: .
+          output-method: replace
+          git-push: "true"
+          template: |-
+            {{ .Content }}
+            # Test Terraform docs
+
+            ## Verify
+
+            Should use the template defined instead of the default
+            Should inject the table under usage
