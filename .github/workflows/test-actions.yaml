@@ -1,33 +1,33 @@
-name: Test Action
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    paths:
-      - modules/**
-
-jobs:
-  tests:
-    name: Test Action
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the codes
-        uses: actions/checkout@v2
-      - name: Check out the event
-        run: |
-          echo '${{ github.event.name }}'
-          echo '${{ github.event_name }}'
-          echo '${{ github.event_path }}'
-          echo '${{ github.event.type }}'
-          echo '${{ github.event.action }}'
-  if_test:
-    name: If test
-    if: ${{ github.event_name == 'pull_request' }}
-    needs: [tests]
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo '${{ github.event_name }}'
-          echo '${{ github.event.action }}'
+#name: Test Action
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    paths:
+#      - modules/**
+#
+#jobs:
+#  tests:
+#    name: Test Action
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out the codes
+#        uses: actions/checkout@v2
+#      - name: Check out the event
+#        run: |
+#          echo '${{ github.event.name }}'
+#          echo '${{ github.event_name }}'
+#          echo '${{ github.event_path }}'
+#          echo '${{ github.event.type }}'
+#          echo '${{ github.event.action }}'
+#  if_test:
+#    name: If test
+#    if: ${{ github.event_name == 'pull_request' }}
+#    needs: [tests]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - run: |
+#          echo '${{ github.event_name }}'
+#          echo '${{ github.event.action }}'
