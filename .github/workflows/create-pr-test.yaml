@@ -40,12 +40,19 @@ jobs:
             Should use the template defined instead of the default
             Should inject the table under usage
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        id: open-pr
+        uses: repo-sync/pull-request@v2
         with:
-          base: main
-          branch: 'test-branch-${{ github.run_id }}'
-          title: 'TEST AUTO PR'
-          body: |
+          destination_branch: 'main'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: 'TEST AUTO PR'
+          pr_body: |
             테스트용 PR
             - test1
             - test2
+      - name: output-url
+        run: echo ${{steps.open-pr.outputs.pr_url}}
+      - name: output-number
+        run: echo ${{steps.open-pr.outputs.pr_number}}
+      - name: output-has-changed-files
+        run: echo ${{steps.open-pr.outputs.has_changed_files}}
