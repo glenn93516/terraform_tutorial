@@ -1,10 +1,3 @@
-# Test Terraform docs
-
-## Verify
-
-Should use the template defined instead of the default
-Should inject the table under usage
-
 ## Requirements
 
 | Name | Version |
@@ -41,3 +34,9 @@ No modules.
 |------|-------------|
 | <a name="output_vpc_arn"></a> [vpc\_arn](#output\_vpc\_arn) | Amazon Resource Name of test VPC |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | The ID of the VPC |
+# Test Terraform docs
+
+## Verify
+
+Should use the template defined instead of the default
+Should inject the table under usage
