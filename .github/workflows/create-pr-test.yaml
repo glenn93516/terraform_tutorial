@@ -43,6 +43,7 @@ jobs:
         id: open-pr
         uses: repo-sync/pull-request@v2
         with:
+          source_branch: 'test-branch-${{ github.run_id }}'
           destination_branch: 'main'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: 'TEST AUTO PR'
