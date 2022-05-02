@@ -5,6 +5,9 @@ on:
     paths:
       - create_pr_test/**
 
+env:
+  BRANCH_NAME: 'test-branch-${{ github.run_id }}'
+
 jobs:
   create_branch:
     runs-on: ubuntu-latest
@@ -14,7 +17,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: 'test-branch-${{ github.run_id }}'
+          branch: ${{ env.BRANCH_NAME }}
   terraform-docs:
     runs-on: ubuntu-latest
     needs: [create_branch]
@@ -22,7 +25,7 @@ jobs:
       - name: checkout to branch
         uses: actions/checkout@v3
         with:
-          ref: 'test-branch-${{ github.run_id }}'
+          ref: ${{ env.BRANCH_NAME }}
       - name: Rendering terraform docs and push
         uses: terraform-docs/gh-actions@main
         with:
@@ -43,7 +46,7 @@ jobs:
         id: open-pr
         uses: repo-sync/pull-request@v2
         with:
-          source_branch: 'test-branch-${{ github.run_id }}'
+          source_branch: ${{ env.BRANCH_NAME }}
           destination_branch: 'main'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: 'TEST AUTO PR'
