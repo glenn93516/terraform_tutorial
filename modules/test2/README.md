@@ -1,10 +1,3 @@
-# Test Terraform docs
-
-## Verify
-
-Should use the template defined instead of the default
-Should inject the table under usage
-
 ## Requirements
 
 | Name | Version |
@@ -32,7 +25,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | The CIDR block of VPC | `string` | `"10.0.0.0/16"` | no |
+| <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | The CIDR block of VPC | `string` | `"10.2.0.0/16"` | no |
 | <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | Default tags | `map(string)` | <pre>{<br>  "Created_by": "terraform"<br>}</pre> | no |
 
 ## Outputs
@@ -41,3 +34,9 @@ No modules.
 |------|-------------|
 | <a name="output_vpc_arn"></a> [vpc\_arn](#output\_vpc\_arn) | Amazon Resource Name of test VPC |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | The ID of the VPC |
+# Test Terraform docs
+
+## Verify
+
+Should use the template defined instead of the default
+Should inject the table under usage
