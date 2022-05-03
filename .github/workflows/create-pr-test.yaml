@@ -4,6 +4,7 @@ on:
       - main
     paths:
       - create_pr_test/**
+      - '!create_pr_test/*.md'
 
 env:
   BRANCH_NAME: 'test-branch-${{ github.run_id }}'
